@@ -1,12 +1,14 @@
 const express=require('express');
 const mongoose=require('mongoose')
 const cors=require('cors');
+const logger=require('morgan')
 const bodyparser=require('body-parser')
 const dotenv=require('dotenv');
 
 const app=express();
 app.use(cors());
 app.use(bodyparser.json())
+app.use(logger());
 dotenv.config();
 
 
