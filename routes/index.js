@@ -1,0 +1,14 @@
+const express=require('express');
+const { addContact, getAllContacts, deleteContact } = require('../controllers/indexController');
+const router=express.Router();
+const upload=require('../utils/multer');
+
+
+router.post('/addContact',upload.single('ContactImage'),addContact);
+router.get('/getAllContacts',getAllContacts);
+router.patch('/updateContact');
+router.delete('/deleteContact',deleteContact);
+// router.get("/searchContact")
+
+
+module.exports=router;
